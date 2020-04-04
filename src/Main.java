@@ -9,17 +9,15 @@ public class Main {
         String result = "";
 
         Stack<Integer> binaryNumber = new Stack<>();
-        while (decimalNumber / 2 != 0) {
+        while (decimalNumber != 0) {
             int remainder = decimalNumber % 2;
             decimalNumber = decimalNumber / 2;
             binaryNumber.push(remainder);
         }
 
-        for (Integer value : binaryNumber) {
-            result += value;
-        }
-
         System.out.println("Number after converting to binary: ");
-        System.out.println(result);
+        while (!binaryNumber.isEmpty()) {
+            System.out.print(binaryNumber.pop());
+        }
     }
 }
